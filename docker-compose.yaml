@@ -1,0 +1,61 @@
+version: "3"
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_DB=graphs
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+    ports:
+      - "5432:5432"
+  web:
+    build: .
+    restart: always
+    command: gunicorn graphs.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/code
+    expose:
+      - 8000
+    ports:
+      - "1337:8000"
+    environment:
+      - ENT_REDIS_LOCATION=redis://redis:6379
+    depends_on:
+      - db
+      - redis
+  test_web:
+    build: .
+    command: python3 manage.py test
+    environment:
+      - ENT_REDIS_LOCATION=redis://redis:6379
+    depends_on:
+      - web
+  load_data:
+    build: .
+    restart: always
+    command: python manage.py loaddata db.json
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+  migration:
+    build: .
+    restart: always
+    command: sh -c "python manage.py makemigrations && python manage.py migrate --noinput"
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+
+  redis:
+    image: "redis:alpine"
+    restart: always
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - web
