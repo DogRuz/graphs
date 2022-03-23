@@ -19,10 +19,12 @@ class Calculate:
 
     @staticmethod
     def compare_size(x1, x2):
-        if x1.size > x2.size:
-            x2 = np.resize(x2, x1.shape)
-        elif x1.size < x2.size:
-            x1 = np.resize(x1, x2.shape)
+        x1_size = x1.size
+        x2_size = x2.size
+        if x1_size > x2_size:
+            x2 = np.hstack([x2, np.zeros(x1_size - x2_size)])
+        elif x1_size < x2_size:
+            x1 = np.hstack([x1, np.zeros(x2_size - x1_size)])
         return x1, x2
 
     def add(self):

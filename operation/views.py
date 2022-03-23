@@ -19,7 +19,7 @@ class OperationsView(APIView):
     @staticmethod
     @cache_page(CACHE_TTL)
     def get(request):
-        result = GetAllOperations().execute().values()
+        result = list(GetAllOperations().execute().values())
         return JsonResponse(result, safe=False)
 
     @staticmethod
