@@ -25,13 +25,13 @@ services:
     depends_on:
       - db
       - redis
-#  test_web:
-#    build: .
-#    command: python3 manage.py test
-#    environment:
-#      - ENT_REDIS_LOCATION=redis://redis:6379
-#    depends_on:
-#      - web
+  test_web:
+    build: .
+    command: python3 manage.py test
+    environment:
+      - ENT_REDIS_LOCATION=redis://redis:6379
+    depends_on:
+      - web
   load_data:
     build: .
     command: python manage.py loaddata db.json

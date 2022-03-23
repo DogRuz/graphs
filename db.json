@@ -549,6 +549,55 @@
   }
 },
 {
+  "model": "graph.graphs",
+  "pk": 4,
+  "fields": {
+    "name_graph": "5eab27cb-eaf8-4901-81f7-438a9a0113c6"
+  }
+},
+{
+  "model": "graph.graphs",
+  "pk": 5,
+  "fields": {
+    "name_graph": "2a46ed31-0843-48b7-b770-889b4351bfa0"
+  }
+},
+{
+  "model": "graph.graphs",
+  "pk": 6,
+  "fields": {
+    "name_graph": "85d6475a-ea71-48ac-ac27-c22282e8e7e4"
+  }
+},
+{
+  "model": "graph.graphs",
+  "pk": 7,
+  "fields": {
+    "name_graph": "d11ecdcc-2dd6-4cb0-928a-63b62247f527"
+  }
+},
+{
+  "model": "graph.graphs",
+  "pk": 8,
+  "fields": {
+    "name_graph": "c47fcf11-a04c-435e-90ff-5756a8069b50"
+  }
+},
+{
+  "model": "graph.graphs",
+  "pk": 9,
+  "fields": {
+    "name_graph": "c1127adf-5166-4561-a4d0-0fd3a95b6ca2"
+  }
+},
+{
+  "model": "graph.graphs",
+  "pk": 10,
+  "fields": {
+    "name_graph": "43fa0c63-3b13-4e54-bb02-0ca438639363"
+  }
+},
+{
   "model": "graph.vectors",
   "pk": 1,
   "fields": {
@@ -675,6 +724,204 @@
   }
 },
 {
+  "model": "graph.vectors",
+  "pk": 15,
+  "fields": {
+    "graph": 4,
+    "index": 0,
+    "value": 1.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 16,
+  "fields": {
+    "graph": 4,
+    "index": 1,
+    "value": 4.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 17,
+  "fields": {
+    "graph": 4,
+    "index": 2,
+    "value": 5.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 18,
+  "fields": {
+    "graph": 5,
+    "index": 0,
+    "value": 1.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 19,
+  "fields": {
+    "graph": 5,
+    "index": 1,
+    "value": 2.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 20,
+  "fields": {
+    "graph": 5,
+    "index": 2,
+    "value": 1.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 21,
+  "fields": {
+    "graph": 6,
+    "index": 0,
+    "value": 1.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 22,
+  "fields": {
+    "graph": 6,
+    "index": 1,
+    "value": 6.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 23,
+  "fields": {
+    "graph": 6,
+    "index": 2,
+    "value": 4.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 24,
+  "fields": {
+    "graph": 7,
+    "index": 0,
+    "value": -1.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 25,
+  "fields": {
+    "graph": 7,
+    "index": 1,
+    "value": -4.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 26,
+  "fields": {
+    "graph": 7,
+    "index": 2,
+    "value": 0.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 27,
+  "fields": {
+    "graph": 8,
+    "index": 0,
+    "value": 1.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 28,
+  "fields": {
+    "graph": 8,
+    "index": 1,
+    "value": 5.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 29,
+  "fields": {
+    "graph": 9,
+    "index": 0,
+    "value": -1.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 30,
+  "fields": {
+    "graph": 9,
+    "index": 1,
+    "value": -20.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 31,
+  "fields": {
+    "graph": 9,
+    "index": 2,
+    "value": 0.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 32,
+  "fields": {
+    "graph": 10,
+    "index": 0,
+    "value": -5.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 33,
+  "fields": {
+    "graph": 10,
+    "index": 1,
+    "value": -0.45
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 34,
+  "fields": {
+    "graph": 10,
+    "index": 2,
+    "value": 0.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 35,
+  "fields": {
+    "graph": 10,
+    "index": 3,
+    "value": -17.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 36,
+  "fields": {
+    "graph": 10,
+    "index": 4,
+    "value": -0.25
+  }
+},
+{
   "model": "graph.adjacencymatrix",
   "pk": 1,
   "fields": {
@@ -688,6 +935,62 @@
   "fields": {
     "descendant": 3,
     "ancestor": 2
+  }
+},
+{
+  "model": "graph.adjacencymatrix",
+  "pk": 3,
+  "fields": {
+    "descendant": 7,
+    "ancestor": 4
+  }
+},
+{
+  "model": "graph.adjacencymatrix",
+  "pk": 4,
+  "fields": {
+    "descendant": 7,
+    "ancestor": 5
+  }
+},
+{
+  "model": "graph.adjacencymatrix",
+  "pk": 5,
+  "fields": {
+    "descendant": 7,
+    "ancestor": 6
+  }
+},
+{
+  "model": "graph.adjacencymatrix",
+  "pk": 6,
+  "fields": {
+    "descendant": 9,
+    "ancestor": 7
+  }
+},
+{
+  "model": "graph.adjacencymatrix",
+  "pk": 7,
+  "fields": {
+    "descendant": 9,
+    "ancestor": 8
+  }
+},
+{
+  "model": "graph.adjacencymatrix",
+  "pk": 8,
+  "fields": {
+    "descendant": 10,
+    "ancestor": 3
+  }
+},
+{
+  "model": "graph.adjacencymatrix",
+  "pk": 9,
+  "fields": {
+    "descendant": 10,
+    "ancestor": 9
   }
 },
 {
@@ -724,6 +1027,30 @@
   "fields": {
     "graph": 3,
     "operation": 1
+  }
+},
+{
+  "model": "operation.resultgraph",
+  "pk": 4,
+  "fields": {
+    "graph": 7,
+    "operation": 3
+  }
+},
+{
+  "model": "operation.resultgraph",
+  "pk": 5,
+  "fields": {
+    "graph": 9,
+    "operation": 2
+  }
+},
+{
+  "model": "operation.resultgraph",
+  "pk": 6,
+  "fields": {
+    "graph": 10,
+    "operation": 4
   }
 }
 ]
