@@ -25,16 +25,15 @@ services:
     depends_on:
       - db
       - redis
-  test_web:
-    build: .
-    command: python3 manage.py test
-    environment:
-      - ENT_REDIS_LOCATION=redis://redis:6379
-    depends_on:
-      - web
+#  test_web:
+#    build: .
+#    command: python3 manage.py test
+#    environment:
+#      - ENT_REDIS_LOCATION=redis://redis:6379
+#    depends_on:
+#      - web
   load_data:
     build: .
-    restart: always
     command: python manage.py loaddata db.json
     volumes:
       - .:/code
@@ -56,6 +55,6 @@ services:
   nginx:
     build: ./nginx
     ports:
-      - "80:80"
+      - "1443:80"
     depends_on:
       - web

@@ -36,5 +36,5 @@ class AdjacencyMatrix(models.Model):
             if query.count() > 0:
                 descendants_dict[int(graph_id)] = list(query)
         for c in AdjacencyMatrix.objects.filter(ancestor_id=graph_id):
-            _ = c.get_all_descendants(graph_id=c.vector_id, include_self=True, descendants_dict=descendants_dict)
+            _ = c.get_all_descendants(graph_id=c.descendant_id, include_self=True, descendants_dict=descendants_dict)
         return descendants_dict

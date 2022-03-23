@@ -45,7 +45,7 @@ class UpdateRelatedVector:
                             vector = vector[0:self.max_len]
                         vector = UpdateVector(graph_id=ancestor, vector=vector).execute()['vector']
                     vectors.append(vector)
-                operation_id = OperationVector(descendant).execute().first().operation_id
+                operation_id = OperationVector(descendant).execute().operation_id
                 descendant_vector = Calculate(operation_id, vectors)
                 # descendant_vector.swap_operation()
                 descendant_vector = descendant_vector.execute()

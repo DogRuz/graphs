@@ -1,6 +1,6 @@
 from typing import List,Union
 
-from graph.error import GraphNotFound
+from graph.error import GraphNotFound, CoupleExists
 from graph.models import AdjacencyMatrix, Graphs
 
 
@@ -22,9 +22,13 @@ class SaveParent:
         return self.vectors_ids
 
     def execute(self):
+
         for vector_id in self.vectors_ids:
+            is_exists = True if AdjacencyMatrix.objects.filter(id=self.child_id).count() > 0 else False
+            if is_exists > 0:
+                raise CoupleExists()
             try:
                 ancestor_graph = Graphs.objects.get(id=vector_id)
             except Graphs.DoesNotExist:
                 raise GraphNotFound()
-            AdjacencyMatrix.objects.get_or_create(ansctor_graph=ancestor_graph, descendant_id=self.child_id)
+            AdjacencyMatrix.objects.get_or_create(ancestor_id=ancestor_graph.id, descendant_id=self.child_id)

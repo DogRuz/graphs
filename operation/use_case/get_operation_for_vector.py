@@ -12,5 +12,5 @@ class OperationVector:
         return self.graph_id
 
     def execute(self):
-        data = ResultGraph.objects.filter(graph_id=self.graph_id)
+        data = ResultGraph.objects.get(graph_id=self.graph_id)
         return data

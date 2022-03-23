@@ -51,4 +51,4 @@ class ParentVectorView(APIView):
     @staticmethod
     def get(request):
         data = GetAncestors(graph_id=request.GET.get("id")).execute()
-        return JsonResponse(data=data, status=status.HTTP_200_OK, safe=False)
+        return JsonResponse({"connections": data}, status=status.HTTP_200_OK, safe=False)

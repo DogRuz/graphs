@@ -19,23 +19,17 @@ class OperationsView(APIView):
     @staticmethod
     @cache_page(CACHE_TTL)
     def get(request):
-        result = list(GetAllOperations().execute().values())
+        result = GetAllOperations().execute().values()
         return JsonResponse(result, safe=False)
 
     @staticmethod
     def post(request):
         item_serializer = ResultSerializer(data=request.data)
         item_serializer.is_valid()
-        data = SaveResultOperation(**item_serializer.data).execute()
+        data, is_create = SaveResultOperation(**item_serializer.data).execute()
+        if not is_create:
+            UpdateRelatedVector(graph_id=item_serializer.data['graph_id']).execute()
         return JsonResponse({"vector": data}, safe=False)
-
-    @staticmethod
-    def patch(request):
-        item_serializer = ResultSerializer(data=request.data)
-        item_serializer.is_valid()
-        SaveResultOperation(**item_serializer.data).execute()
-        UpdateRelatedVector(graph_id=item_serializer.data['graph_id']).execute()
-        return JsonResponse({})
 
 
 class UseOperationView(APIView):
@@ -43,7 +37,7 @@ class UseOperationView(APIView):
     @staticmethod
     def get(request):
         result = OperationVector(graph_id=request.GET.get("id")).execute()
-        return JsonResponse(list(result.values()), safe=False)
+        return JsonResponse({"operation_id": result.operation_id}, safe=False)
 
     @staticmethod
     def post(request):

@@ -17,29 +17,41 @@ class Calculate:
     def get_operation_for_id(self):
         return {1: self.add, 2: self.mul, 3: self.subtraction, 4: self.division}.get(self.operation)
 
+    @staticmethod
+    def compare_size(x1, x2):
+        if x1.size > x2.size:
+            x2 = np.resize(x2, x1.shape)
+        elif x1.size < x2.size:
+            x1 = np.resize(x1, x2.shape)
+        return x1, x2
+
     def add(self):
         init_vector = np.array(self.vectors[0])
         for vector in self.vectors[1:]:
-            init_vector += np.array(vector)
+            init_vector, new_vector = self.compare_size(init_vector, np.array(vector))
+            init_vector += new_vector
         return init_vector.tolist()
 
     def subtraction(self):
         init_vector = np.array(self.vectors[0])
         for vector in self.vectors[1:]:
-            init_vector -= np.array(vector)
+            init_vector, new_vector = self.compare_size(init_vector, np.array(vector))
+            init_vector -= new_vector
         return init_vector.tolist()
 
     def mul(self):
         init_vector = np.array(self.vectors[0])
         for vector in self.vectors[1:]:
-            init_vector *= np.array(vector)
+            init_vector, new_vector = self.compare_size(init_vector, np.array(vector))
+            init_vector *= new_vector
             init_vector[init_vector == np.inf] = 0
         return init_vector.tolist()
 
     def division(self):
         init_vector = np.array(self.vectors[0]).astype(float)
         for vector in self.vectors[1:]:
-            init_vector /= np.array(vector).astype(float)
+            init_vector, new_vector = self.compare_size(init_vector, np.array(vector))
+            init_vector /= new_vector.astype(float)
             init_vector[init_vector == np.inf] = 0
         return init_vector.tolist()
 

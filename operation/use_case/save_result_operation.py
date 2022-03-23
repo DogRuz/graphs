@@ -19,8 +19,8 @@ class SaveResultOperation:
         return self.operation_id
 
     def execute(self):
-        obj = ResultGraph.objects.get(graph_id=self.graph_id)
+        obj, is_create = ResultGraph.objects.get_or_create(graph_id=self.graph_id)
         obj.operation_id = self.operation_id
         obj.save()
         data = {'operation_id': self.operation_id, 'id': obj.id, 'name_graph': obj.graph_id}
-        return data
+        return data, is_create

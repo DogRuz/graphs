@@ -396,6 +396,42 @@
   }
 },
 {
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add adjacency matrix",
+    "content_type": 12,
+    "codename": "add_adjacencymatrix"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change adjacency matrix",
+    "content_type": 12,
+    "codename": "change_adjacencymatrix"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete adjacency matrix",
+    "content_type": 12,
+    "codename": "delete_adjacencymatrix"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view adjacency matrix",
+    "content_type": 12,
+    "codename": "view_adjacencymatrix"
+  }
+},
+{
   "model": "contenttypes.contenttype",
   "pk": 1,
   "fields": {
@@ -484,10 +520,32 @@
   }
 },
 {
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "graph",
+    "model": "adjacencymatrix"
+  }
+},
+{
   "model": "graph.graphs",
   "pk": 1,
   "fields": {
     "name_graph": "98b2d002-9654-4686-b042-5e3768f13830"
+  }
+},
+{
+  "model": "graph.graphs",
+  "pk": 2,
+  "fields": {
+    "name_graph": "808dc405-31c0-4338-a682-7a593f1f5ded"
+  }
+},
+{
+  "model": "graph.graphs",
+  "pk": 3,
+  "fields": {
+    "name_graph": "6da6d5ed-c6c3-4453-8d70-9723394789cb"
   }
 },
 {
@@ -527,6 +585,112 @@
   }
 },
 {
+  "model": "graph.vectors",
+  "pk": 5,
+  "fields": {
+    "graph": 2,
+    "index": 0,
+    "value": 1.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 6,
+  "fields": {
+    "graph": 2,
+    "index": 1,
+    "value": 1.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 7,
+  "fields": {
+    "graph": 2,
+    "index": 2,
+    "value": 1.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 8,
+  "fields": {
+    "graph": 2,
+    "index": 3,
+    "value": 1.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 9,
+  "fields": {
+    "graph": 2,
+    "index": 4,
+    "value": 1.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 10,
+  "fields": {
+    "graph": 3,
+    "index": 0,
+    "value": 5.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 11,
+  "fields": {
+    "graph": 3,
+    "index": 1,
+    "value": 9.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 12,
+  "fields": {
+    "graph": 3,
+    "index": 2,
+    "value": 5.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 13,
+  "fields": {
+    "graph": 3,
+    "index": 3,
+    "value": 17.0
+  }
+},
+{
+  "model": "graph.vectors",
+  "pk": 14,
+  "fields": {
+    "graph": 3,
+    "index": 4,
+    "value": 1.0
+  }
+},
+{
+  "model": "graph.adjacencymatrix",
+  "pk": 1,
+  "fields": {
+    "descendant": 3,
+    "ancestor": 1
+  }
+},
+{
+  "model": "graph.adjacencymatrix",
+  "pk": 2,
+  "fields": {
+    "descendant": 3,
+    "ancestor": 2
+  }
+},
+{
   "model": "operation.operations",
   "pk": 1,
   "fields": {
@@ -552,6 +716,14 @@
   "pk": 4,
   "fields": {
     "name_operation": "division"
+  }
+},
+{
+  "model": "operation.resultgraph",
+  "pk": 3,
+  "fields": {
+    "graph": 3,
+    "operation": 1
   }
 }
 ]
